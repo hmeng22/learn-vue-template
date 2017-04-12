@@ -16,9 +16,6 @@ pids
 *.seed
 *.pid.lock
 
-# db
-server/dbFiles/
-
 # public
 public/
 
