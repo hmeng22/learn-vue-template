@@ -1,0 +1,26 @@
+# macOS
+.DS_Store*
+._*
+
+# npm
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# db
+server/dbFiles/
+
+# public
+public/
+
+# .env
+*.env*
