@@ -1,3 +1,4 @@
+var opn = require('opn');
 var path = require('path');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.dev.conf');
@@ -25,6 +26,15 @@ app.use(devMiddleware);
 // compilation error display
 app.use(hotMiddleware);
 
-app.listen(port, function() {
-    console.log('Listening on : http://localhost:' + port);
+devMiddleware.waitUntilValid(function() {
+    console.log('Listening on : http://localhost:' + port)
+})
+
+app.listen(port, function(err) {
+    if (err) {
+        console.log(err);
+        return
+    }
+
+    opn('http://localhost:' + port);
 });
