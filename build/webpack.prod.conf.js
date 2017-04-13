@@ -46,7 +46,7 @@ module.exports = merge(baseWebpackConfig, {
         // prevent vendor hash from being updated whenever app bundle is updated
         new webpack.optimize.CommonsChunkPlugin({name: 'manifest', chunks: ['vendor']}),
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: './src/index.html',
             filename: 'index.html',
             inject: true,
             minify: {
