@@ -12,6 +12,7 @@ module.exports = merge(baseWebpackConfig, {
                 NODE_ENV: '"development"'
             }
         }),
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({template: './src/index.html', filename: 'index.html', inject: true})
     ]
 });
