@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ./build/dev",
-    "build": "node ./build/build",
+    "dev": "node ./build/dev.js",
+    "devServer": "node ./build/devServer.js",
+    "build": "node ./build/build.js",
     "server": "nodemon ./build/server.js"
   },
   "dependencies": {
