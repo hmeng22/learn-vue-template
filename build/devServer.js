@@ -1,40 +1,25 @@
 var opn = require('opn');
-var path = require('path');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.dev.conf');
 
-var app = require('../app');
-var port = 3000;
-app.set('port', port);
+var compiler = webpack(webpackConfig);
+
+var webpackDevServer = require('webpack-dev-server');
 
 var compiler = webpack(webpackConfig);
-var devMiddleware = require('webpack-dev-middleware')(compiler);
-var hotMiddleware = require('webpack-hot-middleware')(compiler);
 
-// force page reload when html-webpack-plugin template changes
-compiler.plugin('compilation', function(compilation) {
-    compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
-        hotMiddleware.publish({action: 'reload'})
-        cb()
-    })
-})
-
-// serve webpack bundle output
-app.use(devMiddleware);
-
-// enable hot-reload and state-preserving
-// compilation error display
-app.use(hotMiddleware);
-
-devMiddleware.waitUntilValid(function() {
-    console.log('Listening on : http://localhost:' + port)
-})
-
-app.listen(port, function(err) {
-    if (err) {
-        console.log(err);
-        return
+var server = new webpackDevServer(compiler, {
+    hot: true,
+    quiet: false,
+    noInfo: false,
+    publicPath: '/',
+    stats: {
+        colors: true
     }
-
-    opn('http://localhost:' + port);
 });
+
+var port = 3000;
+server.listen(port, function() {
+    console.log('Listening on : http://localhost:' + port);
+    opn('http://localhost:' + port);
+})
