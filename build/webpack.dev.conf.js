@@ -17,7 +17,10 @@ module.exports = merge(baseWebpackConfig, {
             'process.env': {
                 NODE_ENV: '"development"'
             }
-        }),
+        }),        
+        // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new FriendlyErrorsPlugin(),
         new HtmlWebpackPlugin({template: 'src/index.html', filename: 'index.html', inject: true})
     ]
