@@ -15,7 +15,13 @@ Vue.use(Vuex)
 
 import routes from './routes';
 import store from './store/store'
+import App from './App.vue'
 
 const router = new VueRouter({mode: 'hash', base: __dirname, routes: routes});
 
-new Vue({router, store}).$mount('#app')
+new Vue({
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
+})

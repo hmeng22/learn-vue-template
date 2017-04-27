@@ -125,6 +125,8 @@ Project
    // extract webpack runtime and module manifest to its own file in order to
    // prevent vendor hash from being updated whenever app bundle is updated
    new webpack.optimize.CommonsChunkPlugin({name: 'manifest', chunks: ['vendor']}),
+
+   // vendor.js not only contains Vue codes but also webpackBootstrap. webpackBootstrap will change if chunk is using hash, so we extrace this part into another file.
    ```
 
 7. vuex module

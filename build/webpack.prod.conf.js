@@ -17,10 +17,21 @@ module.exports = merge(baseWebpackConfig, {
       {
         test: /\.pug/,
         loader: 'pug-loader'
+      }, {
+        test: /\.vue$/,
+        use: {
+          loader: "vue-loader",
+          options: {
+            loaders: {
+              css: ExtractTextPlugin.extract({use: 'css-loader'})
+            }
+          }
+        }
       }
     ]
   },
   plugins: [
+    // new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify('production')}),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
