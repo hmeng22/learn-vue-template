@@ -1,5 +1,5 @@
 var app = require('../app');
-var port = 3000;
+var port = 8080;
 app.set('port', port);
 app.listen(port, '127.0.0.1', function() {
     console.log('Listening on ' + port);
@@ -8,7 +8,7 @@ app.listen(port, '127.0.0.1', function() {
 // var app = require('../app');
 // var http = require('http');
 //
-// var port = normalizePort(process.env.PORT || '3000');
+// var port = normalizePort(process.env.PORT || '8080');
 // app.set('port', port);
 //
 // var server = http.createServer(app);

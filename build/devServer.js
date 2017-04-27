@@ -21,7 +21,7 @@ var server = new webpackDevServer(compiler, {
     }
 });
 
-var port = 3000;
+var port = 8080;
 server.listen(port, function() {
     console.log('Listening on : http://localhost:' + port);
     opn('http://localhost:' + port);

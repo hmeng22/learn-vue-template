@@ -12,5 +12,5 @@ webpack(webpackConfig, function(err, stats) {
 
     console.log('  Build complete.\n');
 
-    opn('http://localhost:3000');
+    opn('http://localhost:8080');
 });

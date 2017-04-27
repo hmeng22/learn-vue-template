@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "server": "nodemon ./build/server.js",
     "dev": "node ./build/dev.js",
     "devServer": "node ./build/devServer.js",
-    "build": "node ./build/build.js",
-    "server": "nodemon ./build/server.js"
+    "build": "node ./build/build.js"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
