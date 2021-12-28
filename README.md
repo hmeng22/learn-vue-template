@@ -1,4 +1,7 @@
 # vue-template
+
+Learn [Vue2Notes](https://github.com/hmeng22/learn-vue-template/blob/master/vue2Notes.md) 
+
 Vue2-Webpack2-Express template.
 
 ## Build Setup
